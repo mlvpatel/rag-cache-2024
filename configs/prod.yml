@@ -1,0 +1,7 @@
+# RagFlowCache production profile.
+# Loaded by src/core/config.py when ENV=prod. Environment variables always
+# override these values (Docker and Kubernetes set them at runtime).
+log_level: INFO
+embedding_provider: google
+cag_similarity_threshold: 0.85
+cag_max_context_chars: 12000
