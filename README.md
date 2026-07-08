@@ -144,7 +144,7 @@ RagFlowCache is a 2025 rung in a year by year line of enterprise RAG systems, ea
 | 2025 | [RagFlowProPlus](https://github.com/mlvpatel/RagFlowProPlus), [RagFlowKAG](https://github.com/mlvpatel/RagFlowKAG), RagFlowCache (this repo) | Agentic, knowledge augmented, and cache augmented |
 | 2026 | [RagFlowProMax](https://github.com/mlvpatel/RagFlowProMax), UltimateRAG | Multi agent enterprise, multimodal |
 
-Every rung is measured on the same golden questions, keyless, in the [rag-catalog](https://github.com/mlvpatel/rag-catalog) hub.
+The full line is collected in the [rag-catalog](https://github.com/mlvpatel/rag-catalog) hub, which benchmarks the main rungs on the same golden questions, keyless.
 
 ## Author
 
