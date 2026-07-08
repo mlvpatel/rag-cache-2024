@@ -1,8 +1,8 @@
 # RagFlowCache
 
-**Cache augmented RAG. The whole corpus is preloaded into context, no retrieval, and repeated questions are served instantly from a semantic cache. A 2025 rung of the RagFlow line.**
+**Cache augmented RAG. The whole corpus is preloaded into context, no retrieval, and repeated questions are served instantly from a semantic cache. Part of the RagFlow line.**
 
-**Part of the RagFlow line, enterprise RAG built year by year. This repository is RagFlowCache, Cache Augmented Generation, 2025.** See [the full line](#the-ragflow-line) below.
+**Part of the RagFlow line, a series of reference enterprise RAG implementations. This repository is RagFlowCache, Cache Augmented Generation.** See [the full line](#the-ragflow-line) below.
 
 RagFlowCache answers in one of two ways. If a past question is close enough to the new one, it returns the stored answer straight from a semantic cache, with no model call at all. Otherwise it preloads the whole small corpus into the prompt and answers from documents already in context, then remembers the result so the next repeat is instant. There is no retrieval step, no chunking for search, and no reranker. It runs fully locally on Ollama at no cost.
 
@@ -134,7 +134,7 @@ docker/           Dockerfile and Compose stack
 
 ## The RagFlow line
 
-RagFlowCache is a 2025 rung in a year by year line of enterprise RAG systems, each a faithful snapshot of the best production RAG of its year. 2025 has several: the agentic RagFlowProPlus, the knowledge graph RagFlowKAG, and this cache augmented companion.
+RagFlowCache is one implementation in the RagFlow line, a series demonstrating distinct enterprise RAG retrieval strategies. Related approaches are the agentic RagFlowProPlus, the knowledge graph RagFlowKAG, and this cache augmented companion.
 
 | Year | Repository | Generation |
 |---|---|---|
@@ -144,7 +144,7 @@ RagFlowCache is a 2025 rung in a year by year line of enterprise RAG systems, ea
 | 2025 | [RagFlowProPlus](https://github.com/mlvpatel/RagFlowProPlus), [RagFlowKAG](https://github.com/mlvpatel/RagFlowKAG), RagFlowCache (this repo) | Agentic, knowledge augmented, and cache augmented |
 | 2026 | [RagFlowProMax](https://github.com/mlvpatel/RagFlowProMax), UltimateRAG | Multi agent enterprise, multimodal |
 
-The full line is collected in the [rag-catalog](https://github.com/mlvpatel/rag-catalog) hub, which benchmarks the main rungs on the same golden questions, keyless.
+The full line is collected in the [rag-catalog](https://github.com/mlvpatel/rag-catalog) hub, which benchmarks the main implementations on the same golden questions, keyless.
 
 ## Author
 
