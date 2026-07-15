@@ -1,4 +1,4 @@
-"""LLM helpers for RagFlowCache.
+"""LLM helpers for rag-cache-2024.
 
 The provider is chosen from the model name, so the same code serves OpenAI,
 Anthropic, and local Ollama models. Cache augmented generation preloads a whole

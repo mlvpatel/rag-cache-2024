@@ -1,4 +1,4 @@
-"""Storage for RagFlowCache: the document corpus and the semantic answer cache.
+"""Storage for rag-cache-2024: the document corpus and the semantic answer cache.
 
 The corpus is the full text of every document, stored in one table and
 preloaded into the prompt at answer time, because cache augmented generation
@@ -15,7 +15,7 @@ from typing import Optional, Tuple
 
 logger = logging.getLogger(__name__)
 
-CACHE_COLLECTION = "ragflowcache_cache"
+CACHE_COLLECTION = "rag_cache_cache"
 
 _cache_store = None
 

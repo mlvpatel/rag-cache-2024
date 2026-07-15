@@ -1,4 +1,4 @@
-"""Cache augmented generation engine for RagFlowCache.
+"""Cache augmented generation engine for rag-cache-2024.
 
 Two ideas. First, the whole small corpus is preloaded into the prompt, so the
 model answers from documents already in context, with no retrieval step.
@@ -22,7 +22,7 @@ from src.embeddings.vectorstore_utils import load_document_text
 logger = logging.getLogger(__name__)
 
 _QA_SYSTEM = (
-    "You answer questions for RagFlowCache using only the documents below, which "
+    "You answer questions for rag-cache-2024 using only the documents below, which "
     "are preloaded in full. If the documents do not contain the answer, say you "
     "do not have that information rather than inventing one.\n\n"
     "Documents:\n{corpus}"

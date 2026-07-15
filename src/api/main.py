@@ -1,4 +1,4 @@
-"""RagFlowCache API: cache augmented RAG chat plus document management.
+"""rag-cache-2024 API: cache augmented RAG chat plus document management.
 
 The chat endpoint answers either from a semantic cache of past questions, with
 no model call, or from the whole corpus preloaded into context. It returns
@@ -59,7 +59,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(title="RagFlowCache API", version="1.0.0", lifespan=lifespan)
+app = FastAPI(title="rag-cache-2024 API", version="1.0.0", lifespan=lifespan)
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 app.add_middleware(

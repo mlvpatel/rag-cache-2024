@@ -1,4 +1,4 @@
-"""Chat interface for the RagFlowCache Streamlit app.
+"""Chat interface for the rag-cache-2024 Streamlit app.
 
 Shows the answer plus a trace of how it was produced: a cache hit returns a
 past answer with no model call, a miss answers from the whole corpus preloaded

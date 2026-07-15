@@ -1,1 +1,1 @@
-"""Cache augmented generation layer for RagFlowCache."""
+"""Cache augmented generation layer for rag-cache-2024."""

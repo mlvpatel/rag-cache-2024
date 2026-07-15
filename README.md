@@ -1,16 +1,16 @@
-# RagFlowCache
+# rag-cache-2024
 
-**Cache augmented RAG. The whole corpus is preloaded into context, no retrieval, and repeated questions are served instantly from a semantic cache. Part of the RagFlow line.**
+**Cache augmented RAG. The whole corpus is preloaded into context, no retrieval, and repeated questions are served instantly from a semantic cache. Part of the RAG line.**
 
-**Part of the RagFlow line, a series of reference enterprise RAG implementations. This repository is RagFlowCache, Cache Augmented Generation.** See [the full line](#the-ragflow-line) below.
+**Part of the RAG line, a series of reference enterprise RAG implementations. This repository is rag-cache-2024, Cache Augmented Generation.** See [the full line](#the-rag_naive-line) below.
 
-RagFlowCache answers in one of two ways. If a past question is close enough to the new one, it returns the stored answer straight from a semantic cache, with no model call at all. Otherwise it preloads the whole small corpus into the prompt and answers from documents already in context, then remembers the result so the next repeat is instant. There is no retrieval step, no chunking for search, and no reranker. It runs fully locally on Ollama at no cost.
+rag-cache-2024 answers in one of two ways. If a past question is close enough to the new one, it returns the stored answer straight from a semantic cache, with no model call at all. Otherwise it preloads the whole small corpus into the prompt and answers from documents already in context, then remembers the result so the next repeat is instant. There is no retrieval step, no chunking for search, and no reranker. It runs fully locally on Ollama at no cost.
 
-[![CI](https://github.com/mlvpatel/RagFlowCache/actions/workflows/ci.yml/badge.svg)](https://github.com/mlvpatel/RagFlowCache/actions/workflows/ci.yml) ![Python](https://img.shields.io/badge/python-3.11-blue) ![Approach](https://img.shields.io/badge/approach-cache%20augmented-blue) ![Postgres](https://img.shields.io/badge/Postgres-pgvector-blue) ![License](https://img.shields.io/badge/license-MIT-green)
+[![CI](https://github.com/mlvpatel/rag-cache-2024/actions/workflows/ci.yml/badge.svg)](https://github.com/mlvpatel/rag-cache-2024/actions/workflows/ci.yml) ![Python](https://img.shields.io/badge/python-3.11-blue) ![Approach](https://img.shields.io/badge/approach-cache%20augmented-blue) ![Postgres](https://img.shields.io/badge/Postgres-pgvector-blue) ![License](https://img.shields.io/badge/license-MIT-green)
 
-![RagFlowCache answering, then serving a repeat from the semantic cache](assets/videos/ragflowcache-demo.gif)
+![rag-cache-2024 answering, then serving a repeat from the semantic cache](assets/videos/rag_cache-demo.gif)
 
-The clip above is a live, unedited run on a local model. The first answer comes from the preloaded corpus; the trace then shows a repeated question served from the cache with no model call. A full resolution screenshot is at [assets/screenshots/ragflowcache-ui.png](assets/screenshots/ragflowcache-ui.png). No paid keys were used.
+The clip above is a live, unedited run on a local model. The first answer comes from the preloaded corpus; the trace then shows a repeated question served from the cache with no model call. A full resolution screenshot is at [assets/screenshots/rag_cache-ui.png](assets/screenshots/rag_cache-ui.png). No paid keys were used.
 
 ## What makes it cache augmented
 
@@ -132,19 +132,17 @@ tests/            unit and integration tests
 docker/           Dockerfile and Compose stack
 ```
 
-## The RagFlow line
+## The RAG line
 
-RagFlowCache is one implementation in the RagFlow line, a series demonstrating distinct enterprise RAG retrieval strategies. Related approaches are the agentic RagFlowProPlus, the knowledge graph RagFlowKAG, and this cache augmented companion.
+rag-cache-2024 is one implementation in the RAG line, a series demonstrating distinct enterprise RAG retrieval strategies. Related approaches are the agentic rag-agentic-2025, the knowledge graph rag-graph-2024, and this cache augmented companion.
 
 | Year | Repository | Generation |
 |---|---|---|
-| 2022 | [RagFlow](https://github.com/mlvpatel/RagFlow) | Naive RAG, single dense retrieval |
-| 2023 | [RagFlowPlus](https://github.com/mlvpatel/RagFlowPlus) | Advanced RAG, hybrid retrieval and reranking |
-| 2024 | [RagFlowPro](https://github.com/mlvpatel/RagFlowPro) | Modular production RAG, pgvector, streaming, evaluation |
-| 2025 | [RagFlowProPlus](https://github.com/mlvpatel/RagFlowProPlus), [RagFlowKAG](https://github.com/mlvpatel/RagFlowKAG), RagFlowCache (this repo) | Agentic, knowledge augmented, and cache augmented |
-| 2026 | [RagFlowProMax](https://github.com/mlvpatel/RagFlowProMax), UltimateRAG | Multi agent enterprise, multimodal |
-
-The full line is collected in the [rag-catalog](https://github.com/mlvpatel/rag-catalog) hub, which benchmarks the main implementations on the same golden questions, keyless.
+| 2022 | [rag-naive-2022](https://github.com/mlvpatel/rag-naive-2022) | Naive RAG, single dense retrieval |
+| 2023 | [rag-advanced-2023](https://github.com/mlvpatel/rag-advanced-2023) | Advanced RAG, hybrid retrieval and reranking |
+| 2024 | [rag-modular-2023](https://github.com/mlvpatel/rag-modular-2023) | Modular production RAG, pgvector, streaming, evaluation |
+| 2025 | [rag-agentic-2025](https://github.com/mlvpatel/rag-agentic-2025), [rag-graph-2024](https://github.com/mlvpatel/rag-graph-2024), rag-cache-2024 (this repo) | Agentic, knowledge augmented, and cache augmented |
+| 2026 | [rag-multiagent-2026](https://github.com/mlvpatel/rag-multiagent-2026), rag-multimodal-2026 | Multi agent enterprise, multimodal |
 
 ## Author
 

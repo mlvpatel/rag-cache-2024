@@ -1,4 +1,4 @@
-"""RagFlowCache Streamlit application entry point."""
+"""rag-cache-2024 Streamlit application entry point."""
 
 import os
 import sys
@@ -12,8 +12,8 @@ from frontend.sidebar import display_sidebar  # noqa: E402
 
 
 def main() -> None:
-    st.set_page_config(page_title="RagFlowCache", layout="wide")
-    st.title("RagFlowCache")
+    st.set_page_config(page_title="rag-cache-2024", layout="wide")
+    st.title("rag-cache-2024")
     st.caption(
         "Cache augmented RAG, 2025. The whole corpus is preloaded into context, "
         "and repeated questions are served instantly from a semantic cache."

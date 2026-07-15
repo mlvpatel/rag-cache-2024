@@ -1,4 +1,4 @@
-"""Request and response models for the RagFlowCache API."""
+"""Request and response models for the rag-cache-2024 API."""
 
 from datetime import datetime
 from typing import Optional, Union

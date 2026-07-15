@@ -1,4 +1,4 @@
-"""Embedding and document loading utilities for RagFlowCache.
+"""Embedding and document loading utilities for rag-cache-2024.
 
 Cache augmented generation does not retrieve chunks, so there is no vector
 store of document fragments here. Two things remain: an embedder, used to

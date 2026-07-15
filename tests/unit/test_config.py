@@ -19,7 +19,7 @@ def test_settings_has_documented_defaults():
     assert settings.cag_max_context_chars == 12000
     assert (
         settings.database_url
-        == "postgresql://ragflow:ragflow@localhost:5432/ragflowcache"
+        == "postgresql://rag:rag@localhost:5432/rag_cache"
     )
     assert settings.redis_url == "redis://localhost:6379/0"
     assert settings.google_api_key is None

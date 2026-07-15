@@ -5,7 +5,7 @@ import sys
 
 from src.core.config import settings
 
-logger = logging.getLogger("ragflowcache")
+logger = logging.getLogger("rag_cache")
 
 
 def configure_logging() -> None:

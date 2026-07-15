@@ -1,4 +1,4 @@
-"""Client for the RagFlowCache API, used by the Streamlit frontend.
+"""Client for the rag-cache-2024 API, used by the Streamlit frontend.
 
 All calls go through the v1 router and carry the X-API-Key header. The chat call
 posts a question and returns the answer together with the agent's reasoning
