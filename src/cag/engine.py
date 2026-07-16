@@ -16,7 +16,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 
 from src.cag import store
 from src.core.config import settings
-from src.core.langchain_utils import _make_llm
+from src.core.langchain_utils import _make_llm, _reformulate_query, _to_lc_messages
 from src.embeddings.vectorstore_utils import load_document_text
 
 logger = logging.getLogger(__name__)
@@ -30,12 +30,25 @@ _QA_SYSTEM = (
 
 
 def run_cag(model: str, question: str, chat_history=None) -> dict:
-    """Answer a question from the semantic cache, or from the preloaded corpus."""
+    """Answer a question from the semantic cache, or from the preloaded corpus.
+
+    With history present the question is first rewritten to be standalone, and
+    the cache is keyed on that rewrite. Caching the raw follow-up would poison
+    the cache: "and after five years?" means something different in every
+    conversation, but the standalone form means exactly one thing.
+    """
     steps: List[Dict[str, Any]] = []
+    llm = _make_llm(model, temperature=0)
+
+    # 0. Resolve the follow-up against the session history.
+    history = _to_lc_messages(chat_history)
+    query = _reformulate_query(llm, question, history)
+    if query != question:
+        steps.append({"step": "reformulate", "standalone_question": query})
 
     # 1. Semantic cache: a close enough past question returns instantly.
     cached_answer, similarity = store.cache_lookup(
-        question, settings.cag_similarity_threshold
+        query, settings.cag_similarity_threshold
     )
     sim = round(similarity, 3)
     if cached_answer is not None:
@@ -53,15 +66,14 @@ def run_cag(model: str, question: str, chat_history=None) -> dict:
     steps.append({"step": "load_corpus", "documents": used, "chars": len(corpus)})
 
     # 3. Generate grounded in the preloaded corpus.
-    llm = _make_llm(model, temperature=0)
     system = _QA_SYSTEM.format(corpus=corpus or "None.")
     answer = llm.invoke(
-        [SystemMessage(content=system), HumanMessage(content=question)]
+        [SystemMessage(content=system), HumanMessage(content=query)]
     ).content
     steps.append({"step": "grounded_answer"})
 
     # 4. Store the answer so a repeat question is served from the cache.
-    store.cache_store(question, answer)
+    store.cache_store(query, answer)
     steps.append({"step": "cache_store"})
 
     return {"answer": answer, "cached": False, "similarity": sim, "steps": steps}

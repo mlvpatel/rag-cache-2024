@@ -124,6 +124,23 @@ def cache_lookup(question: str, threshold: float) -> Tuple[Optional[str], float]
     return None, similarity
 
 
+def cache_clear() -> None:
+    """Drop every cached answer.
+
+    Called whenever the corpus changes: a cached answer was generated against
+    the old corpus, and serving it after an upload or delete would be answering
+    from documents that no longer say that. Full invalidation is deliberately
+    simple; the cache refills on the next misses.
+    """
+    global _cache_store
+    try:
+        get_cache_store().delete_collection()
+    except Exception as exc:
+        logger.warning("Cache clear skipped: %s", exc)
+    finally:
+        _cache_store = None
+
+
 def cache_store(question: str, answer: str) -> None:
     """Remember a question and its answer for future cache hits."""
     from langchain_core.documents import Document

@@ -1,8 +1,9 @@
 """Client for the rag-cache-2024 API, used by the Streamlit frontend.
 
-All calls go through the v1 router and carry the X-API-Key header. The chat call
-posts a question and returns the answer together with the agent's reasoning
-trace, so the UI can show the retrieve, grade, rewrite, and self-check steps.
+All calls go through the v1 router. The chat call
+posts a question and returns the answer together with the cache trace, so the
+UI can show whether the answer came from the semantic cache or from the model
+reading the preloaded corpus.
 """
 
 import os
@@ -10,11 +11,10 @@ import os
 import requests
 
 API_URL = os.getenv("API_URL", "http://localhost:8000")
-API_KEY = os.getenv("API_KEY", "change_me")
 
 
 def _headers(json_content: bool = True) -> dict:
-    headers = {"X-API-Key": API_KEY}
+    headers = {}
     if json_content:
         headers["Content-Type"] = "application/json"
     return headers

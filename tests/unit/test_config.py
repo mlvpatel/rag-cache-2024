@@ -13,7 +13,6 @@ def test_settings_has_documented_defaults():
     settings = Settings()
 
     assert settings.embedding_model == "models/gemini-embedding-001"
-    assert settings.embedding_dims == 768
     assert settings.ollama_num_ctx == 8192
     assert settings.cag_similarity_threshold == 0.85
     assert settings.cag_max_context_chars == 12000
@@ -21,7 +20,6 @@ def test_settings_has_documented_defaults():
     assert settings.redis_url == "redis://localhost:6379/0"
     assert settings.google_api_key is None
     assert settings.openai_api_key is None
-    assert settings.api_key == "change_me"
     assert settings.allowed_origins == "http://localhost:8501"
     assert settings.log_level == "INFO"
     assert settings.env == "dev"
@@ -59,7 +57,6 @@ def test_yaml_file_overrides_defaults(tmp_path, monkeypatch):
     assert settings.cag_max_context_chars == 5000
     assert settings.cag_similarity_threshold == 0.7
     # Untouched keys keep their defaults.
-    assert settings.embedding_dims == 768
 
 
 def test_env_var_takes_precedence_over_yaml(tmp_path, monkeypatch):

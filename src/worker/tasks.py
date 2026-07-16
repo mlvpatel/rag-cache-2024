@@ -4,6 +4,7 @@ import logging
 
 from src.api.db_utils import delete_document_record, insert_document_record
 from src.cag.engine import index_corpus_document
+from src.cag.store import cache_clear
 from src.worker.celery_app import celery_app
 
 logger = logging.getLogger("rag_cache")
@@ -26,4 +27,6 @@ def process_document(file_path: str, filename: str) -> dict:
             "Corpus load failed for %s, rolled back record %s", filename, file_id
         )
         return {"status": "failed", "file_id": file_id}
+    # The corpus changed, so every cached answer is stale by definition.
+    cache_clear()
     return {"status": "completed", "file_id": file_id}

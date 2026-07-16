@@ -90,8 +90,9 @@ def test_get_chat_history_maps_rows_to_alternating_human_ai_dicts_in_order():
     assert "SELECT" in sql
     assert "application_logs" in sql
     assert "WHERE session_id = %s" in sql
-    assert "ORDER BY created_at" in sql
-    assert params == ("session-123",)
+    assert "LIMIT %s" in sql
+    assert "ORDER BY id ASC" in sql
+    assert params == ("session-123", 20)
 
 
 def test_get_chat_history_empty_when_no_rows():

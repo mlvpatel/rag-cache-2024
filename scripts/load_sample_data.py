@@ -11,6 +11,7 @@ sample data. For a fully local, no cost run:
 Each file is chunked, embedded with the configured provider, and stored in the
 pgvector database, exactly as an upload through the UI would be.
 """
+
 import os
 import sys
 from pathlib import Path
@@ -28,12 +29,14 @@ def main() -> None:
     if not files:
         print(f"No .txt sample files found in {SAMPLE_DIR}")
         return
-    init_db()  # create tables, including the knowledge graph, if missing
+    init_db()  # create tables if missing
     print(f"Loading {len(files)} sample documents from {SAMPLE_DIR.name}/")
     for path in files:
         result = process_document(str(path), path.name)
         print(f"  {path.name}: {result}")
-    print("Done. Open the UI and ask a question, see sample_data/README.md for examples.")
+    print(
+        "Done. Open the UI and ask a question, see sample_data/README.md for examples."
+    )
 
 
 if __name__ == "__main__":

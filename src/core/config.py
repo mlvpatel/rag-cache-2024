@@ -44,7 +44,6 @@ class Settings(BaseSettings):
     redis_url: str = "redis://localhost:6379/0"
     google_api_key: str | None = None
     openai_api_key: str | None = None
-    api_key: str = "change_me"
     embedding_provider: str = "google"  # google or ollama
     embedding_model: str = "models/gemini-embedding-001"
     embedding_dims: int = 768
@@ -58,6 +57,7 @@ class Settings(BaseSettings):
     # call at all.
     cag_similarity_threshold: float = 0.85
     cag_max_context_chars: int = 12000
+    max_upload_mb: int = 25
     allowed_origins: str = "http://localhost:8501"
     log_level: str = "INFO"
     env: str = "dev"
