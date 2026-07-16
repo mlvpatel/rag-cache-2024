@@ -28,15 +28,19 @@ def _ollama_running() -> bool:
 
 
 def _cleanup():
-    store.delete_document(FILE_ID)
-    with psycopg.connect(config_mod.settings.database_url) as conn:
-        with conn.cursor() as cur:
-            cur.execute(
-                "DELETE FROM langchain_pg_embedding e "
-                "USING langchain_pg_collection c "
-                "WHERE e.collection_id = c.uuid AND c.name = %s",
-                (store.CACHE_COLLECTION,),
-            )
+    # A fresh database has no pgvector tables yet; nothing to clean is fine.
+    try:
+        store.delete_document(FILE_ID)
+        with psycopg.connect(config_mod.settings.database_url) as conn:
+            with conn.cursor() as cur:
+                cur.execute(
+                    "DELETE FROM langchain_pg_embedding e "
+                    "USING langchain_pg_collection c "
+                    "WHERE e.collection_id = c.uuid AND c.name = %s",
+                    (store.CACHE_COLLECTION,),
+                )
+    except psycopg.errors.UndefinedTable:
+        pass
 
 
 @pytest.mark.skipif(not _ollama_running(), reason="ollama server not running")
