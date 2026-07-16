@@ -1,4 +1,4 @@
-# RagFlowCache image for the api, worker, and streamlit services.
+# rag-cache-2024 image for the api, worker, and streamlit services.
 FROM python:3.11-slim
 
 ENV PYTHONUNBUFFERED=1 \
