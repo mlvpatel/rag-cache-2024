@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-label="RagChatBot, Cache Augmented">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1c1917"/>
+      <stop offset="1" stop-color="#431407"/>
+    </linearGradient>
+    <linearGradient id="ac" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fb923c"/>
+      <stop offset="1" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="360" rx="18" fill="url(#bg)"/>
+  <rect x="1.5" y="1.5" width="1197" height="357" rx="17" fill="none" stroke="#fb923c" stroke-opacity="0.25" stroke-width="3"/>
+
+  <!-- title block -->
+  <rect x="64" y="74" width="56" height="10" rx="5" fill="url(#ac)"/>
+  <text x="64" y="146" font-family="Helvetica, Arial, sans-serif" font-size="64" font-weight="700" fill="#f8fafc">RagChatBot</text>
+  <text x="64" y="196" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="600" fill="#fb923c">Cache Augmented</text>
+  <text x="64" y="232" font-family="Helvetica, Arial, sans-serif" font-size="19" fill="#cbd5e1">corpus in context, repeats served instantly</text>
+  <rect x="64" y="258" width="165.0" height="34" rx="17" fill="#f8fafc" fill-opacity="0.08" stroke="#fb923c" stroke-opacity="0.5"/>
+  <text x="146.5" y="281" font-family="ui-monospace, Menlo, monospace" font-size="17" fill="#fbbf24" text-anchor="middle">rag-cache-2024</text>
+
+  <!-- year badge -->
+  <rect x="1066" y="34" width="70" height="32" rx="16" fill="#fb923c" fill-opacity="0.16" stroke="#fb923c" stroke-opacity="0.55"/>
+  <text x="1101" y="56" font-family="Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#fbbf24" text-anchor="middle">2024</text>
+
+  <!-- motif -->
+  
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <rect x="720" y="96" width="150" height="180" rx="12" fill="#f8fafc" fill-opacity="0.07" stroke="#fb923c" stroke-width="3" opacity="0.85"/>
+    <rect x="742" y="76" width="150" height="180" rx="12" fill="#f8fafc" fill-opacity="0.09" stroke="#fb923c" stroke-width="3"/>
+    <line x1="768" y1="116" x2="866" y2="116" stroke="#fbbf24" stroke-width="5" opacity="0.8"/>
+    <line x1="768" y1="146" x2="866" y2="146" stroke="#fbbf24" stroke-width="5" opacity="0.6"/>
+    <line x1="768" y1="176" x2="842" y2="176" stroke="#fbbf24" stroke-width="5" opacity="0.4"/>
+    <line x1="768" y1="206" x2="856" y2="206" stroke="#fbbf24" stroke-width="5" opacity="0.25"/>
+    <polygon points="1020,72 950,190 1000,190 940,296 1075,160 1015,160 1068,72" fill="url(#ac)"/>
+    <text x="720" y="316" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#cbd5e1">cache hit: no model call</text>
+  </g>
+
+  <!-- corner credit -->
+  <text x="1160" y="334" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#94a3b8" text-anchor="end">by <tspan fill="#fbbf24">MlvPtL</tspan></text>
+</svg>

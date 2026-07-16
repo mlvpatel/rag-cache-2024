@@ -6,9 +6,7 @@ Part of the RAG line, a series of reference enterprise RAG implementations, one 
 
 [![CI](https://github.com/mlvpatel/rag-cache-2024/actions/workflows/ci.yml/badge.svg)](https://github.com/mlvpatel/rag-cache-2024/actions/workflows/ci.yml) ![Python](https://img.shields.io/badge/python-3.11-blue) ![Approach](https://img.shields.io/badge/approach-cache%20augmented-blue) ![Postgres](https://img.shields.io/badge/Postgres-pgvector-blue) ![License](https://img.shields.io/badge/license-MIT-green)
 
-![rag-cache-2024 answering, then serving a repeat from the semantic cache](assets/videos/rag-cache-2024-demo.gif)
-
-The clip above is a live, unedited run on a local model. The first answer comes from the preloaded corpus; the trace then shows a repeated question served from the cache with no model call. A full resolution screenshot is at [assets/screenshots/rag-cache-2024-ui.png](assets/screenshots/rag-cache-2024-ui.png). No paid keys were used.
+![RagChatBot banner](assets/banner.svg)
 
 ## Contents
 
